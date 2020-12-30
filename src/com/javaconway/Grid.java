@@ -45,30 +45,30 @@ public class Grid {
 
     public int getNeighbours(int i, int j) {
         int alive = 0;
-        if (gridCells[i + 1][j].isAlive) {
+        if (i < gridHeight - 1) if (gridCells[i + 1][j].isAlive) {
             alive++;
         }
-        if (gridCells[i - 1][j].isAlive) {
+        if (i > 0) if (gridCells[i - 1][j].isAlive) {
             alive++;
         }
-        if (gridCells[i + 1][j + 1].isAlive) {
+        if (i < gridHeight - 1 & j < gridWidth - 1) if (gridCells[i + 1][j + 1].isAlive) {
             alive++;
         }
-        if (gridCells[i - 1][j + 1].isAlive) {
+        if (i > 0 & j < gridWidth - 1) if (gridCells[i - 1][j + 1].isAlive) {
             alive++;
         }
-        if (gridCells[i - 1][j - 1].isAlive) {
+        if (i > 0 & j > 0) if (gridCells[i - 1][j - 1].isAlive) {
             alive++;
         }
-        if (gridCells[i][j - 1].isAlive) {
-            alive++;
-        }
-
-        if (gridCells[i][j + 1].isAlive) {
+        if (j > 0) if (gridCells[i][j - 1].isAlive) {
             alive++;
         }
 
-        if (gridCells[i + 1][j - 1].isAlive) {
+        if (j < gridWidth - 1) if (gridCells[i][j + 1].isAlive) {
+            alive++;
+        }
+
+        if (i < gridHeight - 1 & j > 0) if (gridCells[i + 1][j - 1].isAlive) {
             alive++;
         }
 
